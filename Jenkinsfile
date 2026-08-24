@@ -27,3 +27,21 @@
 	                }
 	            }
 	        }
+            }
+	
+	    post {
+	        always {
+	
+	            echo 'Publishing Playwright HTML Report...'
+	
+	            publishHTML([
+	                allowMissing: true,
+	                alwaysLinkToLastBuild: true,
+	                keepAll: true,
+	                reportDir: 'playwright-report',
+	                reportFiles: 'index.html',
+	                reportName: 'Playwright HTML Report'
+	            ])
+ }
+	    }
+	}
